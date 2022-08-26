@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: blueviolet;
+            padding: 14px;
+            color: white;
+            font-size: 3rem;
+
+        }
+        input{
+            width: 40%;
+            background-color: blueviolet;
+            color: white;
+            font-size: 1.4rem;
+            padding: 12px;
+
+        }
+        button{
+            padding: 10px 40px;
+            background-color: blueviolet;
+            color: white;
+            font-size: 1.3rem;
+            border-radius: 5px;
+
+        }
+        h3{
+            font-size: 2rem;
+            color: blueviolet;
+            padding: 10px;
+        }
+        .count{
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Prime number Or not</h1>
+    <div class="cout">
+        <input type="text" id="number" placeholder="Enter a number"><br><br>
+        <button id="btn">Check</button>
+        <h3 id="text"></h3>
+    </div>
+
+    <script>
+        
+        let number = document.getElementById('number');
+        let btn = document.getElementById('btn');
+        let text = document.getElementById('text');
+
+        btn.addEventListener('click',() => {
+            let cont = 0;
+
+            for(let i=2; i<number.value; i++){
+                if(number.value % i === 0){
+                    cont++;
+                    break;
+                }
+            }
+            if(cont === 0){
+                text.innerHTML = "Prime Number";
+            }
+            else{
+                text.innerHTML = "Not Prime Number";
+            }
+        });
+
+    </script>
+    
+</body>
+</html>
